@@ -8,6 +8,7 @@ import { Keyboard } from '@ionic-native/keyboard';
 import { HomePage } from "../pages/home/home";
 import { LoginPage } from "../pages/login/login";
 import { LocalWeatherPage } from "../pages/local-weather/local-weather";
+import {TripsPage} from "../pages/trips/trips";
 
 export interface MenuItem {
     title: string;
@@ -22,7 +23,7 @@ export interface MenuItem {
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginPage;
+  rootPage: any = TripsPage;
 
   appMenuItems: Array<MenuItem>;
 
@@ -53,7 +54,7 @@ export class MyApp {
       this.statusBar.overlaysWebView(false);
 
       //*** Control Keyboard
-      this.keyboard.disableScroll(true);
+      //this.keyboard.disableScroll(true);
     });
   }
 

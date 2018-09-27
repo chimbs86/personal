@@ -1,7 +1,7 @@
 export let TRIPS = [
   {
     id: 1,
-    name: "Copacabana Beach",
+    name: "Adconion Media Group",
     price_adult: 60,
     price_child: 30,
     time: "12h",
@@ -12,7 +12,7 @@ export let TRIPS = [
     description: "From sexy Ipanema and Copacabana, to more secluded and slightly lesser-known stretches of sand, like Prainha Beach, Brazil's Rio de Janeiro is best known for its beaches. Grab your sunscreen and Brazilian bikinis and head to the sunny shores of Rio's best beaches.",
     location: "Rio de Janeiro, Brazil",
     images: [
-      "assets/img/trip/thumb/trip_5.jpg",
+      "assets/img/trip/thumb/trip_5s.jpg",
       "assets/img/trip/thumb/trip_6.jpg",
       "assets/img/trip/thumb/trip_7.jpg",
       "assets/img/trip/thumb/trip_8.jpg",
