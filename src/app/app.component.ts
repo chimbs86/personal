@@ -8,7 +8,8 @@ import { Keyboard } from '@ionic-native/keyboard';
 import { HomePage } from "../pages/home/home";
 import { LoginPage } from "../pages/login/login";
 import { LocalWeatherPage } from "../pages/local-weather/local-weather";
-import {TripsPage} from "../pages/trips/trips";
+import {Education} from "../pages/workexperience/Education";
+import {WorkExperience} from "../pages/workexperience/WorkExperience";
 
 export interface MenuItem {
     title: string;
@@ -23,7 +24,7 @@ export interface MenuItem {
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = TripsPage;
+  rootPage: any = HomePage;
 
   appMenuItems: Array<MenuItem>;
 
@@ -37,11 +38,15 @@ export class MyApp {
 
     this.appMenuItems = [
       {title: 'Home', component: HomePage, icon: 'home'},
-      {title: 'Local Weather', component: LocalWeatherPage, icon: 'partly-sunny'}
+      {title: 'Education', component: Education, icon: 'book'},
+      {title: 'Work Experience', component: WorkExperience, icon: 'briefcase'},
+      {title: 'Certifications', component: Education, icon: 'ribbon'},
+      {title: 'Other Projects', component: Education, icon: 'construct'},
     ];
   }
 
   initializeApp() {
+
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
 

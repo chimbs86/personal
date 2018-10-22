@@ -1,0 +1,33 @@
+<!-- -->
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <span ion-text>Qualifications</span>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding class="trips detail-bg">
+  <!--list of dataStructure-->
+  <div class="trip card" *ngFor="let workExperience of dataStructure" tappable (click)="viewDetail(workExperience.id)" margin-bottom>
+    <div class="background border-bottom" [ngStyle]="{'background-image': 'url(' + workExperience.thumb + ')'}">
+      <div class="background-filter rlt">
+        <div class="align-bottom" padding-left padding-right>
+          <h6 class="pull-left text-white" ion-text>{{ workExperience.name }}</h6>
+          <h6 class="pull-right text-white" ion-text>{{ workExperience.price_adult | currency:'USD':true }}</h6>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+    <div class="padding-sm primary-bg">
+      <ion-icon name="time" class="text-white"></ion-icon>
+      <span ion-text class="text-white"></span>
+      <span class="pull-right" ion-text color="light"> <span ion-text  class="text-green bold">{{workExperience.duration}}</span></span>
+    </div>
+  </div>
+</ion-content>
+<!--<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>-->

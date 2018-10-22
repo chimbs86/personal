@@ -4,8 +4,12 @@ import {Storage} from '@ionic/storage';
 
 import {NotificationsPage} from "../notifications/notifications";
 import {SettingsPage} from "../settings/settings";
-import {TripsPage} from "../trips/trips";
+import {Education} from "../workexperience/Education";
 import {SearchLocationPage} from "../search-location/search-location";
+import {AbstractItem} from "../workexperience/AbstractItem";
+import {WorkExperience} from "../workexperience/WorkExperience";
+import {Certifications} from "../workexperience/Certifications";
+import {OtherProjects} from "../workexperience/OtherProjects";
 
 
 @Component({
@@ -22,6 +26,12 @@ export class HomePage {
 
   constructor(private storage: Storage, public nav: NavController, public popoverCtrl: PopoverController) {
   }
+  thumbs:cards[] = [ {imgUrl:'../assets/img/trip/thumb/graduation.jpg', description:'Signalling', name: 'Education', navigator: Education},
+    {imgUrl: '../assets/img/trip/thumb/work-experience.jpg', description:'Practical Knowledge', name: 'Work Experience', navigator: WorkExperience},
+    {imgUrl: '../assets/img/trip/thumb/certification.jpg', description:'Secondary Signalling', name: 'Certifications', navigator: Certifications},
+    {imgUrl: '../assets/img/trip/thumb/passion.jpg', description:'Passion', name: 'Personal Projects', navigator: OtherProjects}
+
+    ];
 
   ionViewWillEnter() {
     // this.search.pickup = "Rio de Janeiro, Brazil";
@@ -39,7 +49,7 @@ export class HomePage {
 
   // go to result page
   doSearch() {
-    this.nav.push(TripsPage);
+    this.nav.push(Education);
   }
 
   // choose place
@@ -59,7 +69,16 @@ export class HomePage {
       ev: myEvent
     });
   }
+  openPage(page) {
+    this.nav.push(page);
+
+  }
 
 }
-
+class cards{
+  imgUrl: string;
+  description: string;
+  name: string;
+  navigator: any;
+}
 //

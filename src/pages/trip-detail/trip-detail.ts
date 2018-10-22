@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 import {NavController} from "ionic-angular";
-import {TripService} from "../../services/trip-service";
+import {AbstractInformationService} from "../../services/abstract-information.service";
 import {CheckoutTripPage} from "../checkout-trip/checkout-trip";
 
 @Component({
@@ -8,14 +8,14 @@ import {CheckoutTripPage} from "../checkout-trip/checkout-trip";
   templateUrl: 'trip-detail.html'
 })
 export class TripDetailPage {
-  // trip info
+  // workExperience info
   public trip: any;
   // number of adult
   public adults = 2;
   // number of children
   public children = 0;
 
-  constructor(public nav: NavController, public tripService: TripService) {
+  constructor(public nav: NavController, public tripService: AbstractInformationService) {
     // set sample data
     this.trip = tripService.getItem(1);
   }

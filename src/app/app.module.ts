@@ -9,7 +9,7 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 import {Keyboard} from '@ionic-native/keyboard';
 
 import {ActivityService} from "../services/activity-service";
-import {TripService} from "../services/trip-service";
+import {AbstractInformationService} from "../services/abstract-information.service";
 import {WeatherProvider} from "../services/weather";
 
 import {MyApp} from "./app.component";
@@ -22,8 +22,15 @@ import {NotificationsPage} from "../pages/notifications/notifications";
 import {RegisterPage} from "../pages/register/register";
 import {SearchLocationPage} from "../pages/search-location/search-location";
 import {TripDetailPage} from "../pages/trip-detail/trip-detail";
-import {TripsPage} from "../pages/trips/trips";
+import {Education} from "../pages/workexperience/Education";
 import {LocalWeatherPage} from "../pages/local-weather/local-weather";
+import {WorkExperience} from "../pages/workexperience/WorkExperience";
+import {Certifications} from "../pages/workexperience/Certifications";
+import {OtherProjects} from "../pages/workexperience/OtherProjects";
+import {WorkExperienceService} from "../services/WorkExperienceService";
+import {EducationService} from "../services/EducationService";
+import {OtherProjectService} from "../services/OtherProjectService";
+import {CertificationService} from "../services/CertificationService";
 
 // import services
 // end import services
@@ -44,7 +51,10 @@ import {LocalWeatherPage} from "../pages/local-weather/local-weather";
     RegisterPage,
     SearchLocationPage,
     TripDetailPage,
-    TripsPage
+    Education,
+    WorkExperience,
+    Certifications,
+    OtherProjects
   ],
   imports: [
     BrowserModule,
@@ -71,14 +81,21 @@ import {LocalWeatherPage} from "../pages/local-weather/local-weather";
     RegisterPage,
     SearchLocationPage,
     TripDetailPage,
-    TripsPage
+    Education,
+    WorkExperience,
+    Certifications,
+    OtherProjects
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Keyboard,
     ActivityService,
-    TripService,
+    AbstractInformationService,
+    WorkExperienceService,
+    EducationService,
+    OtherProjectService,
+    CertificationService,
     WeatherProvider,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]

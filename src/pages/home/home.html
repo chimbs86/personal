@@ -5,34 +5,29 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      <strong>Ionic 3</strong> Start Theme
+      <strong>Gaurav Raje</strong>
     </ion-title>
-    <ion-buttons end>
-      <button ion-button tappable (click)="presentNotifications($event)">
-        <ion-icon name="notifications"></ion-icon>
-      </button>
-      <button ion-button tappable (click)="goToAccount()">
-        <ion-icon name="cog"></ion-icon>
-      </button>
-    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class="animated fadeIn common-bg">
 
-  <ion-card no-margin margin-bottom class="full-width">
-    <ion-item tappable (click)="choosePlace('from')" class="border-bottom">
-      <ion-icon name="search" color="primary" item-left></ion-icon>
-      <span>{{ search.name }}</span>
-    </ion-item>
-    <ion-item>
-      <ion-icon name="md-calendar" color="primary" item-left></ion-icon>
-      <ion-datetime class="no-pl" displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" [(ngModel)]="search.date"></ion-datetime>
-    </ion-item>
-  </ion-card>
-
-  <button ion-button icon-start block no-margin color="primary" class="round" tappable (click)="doSearch()">
-    <ion-icon name="search"></ion-icon> Search
-  </button>
+  <!--list of dataStructure-->
+  <div class="trip card"  *ngFor="let thumb of thumbs" margin-bottom (click)="openPage(thumb.navigator)">
+    <div class="background border-bottom" [ngStyle]="{'background-image': 'url(' + thumb.imgUrl+ ')'}">
+      <div class="background-filter rlt">
+        <div class="align-bottom" padding-left padding-right>
+          <h6 class="pull-left text-white" ion-text>{{thumb.name}}</h6>
+          <!--<h6 class="pull-right text-white" ion-text>{{thumb.description}}</h6>-->
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+    <div class="padding-sm primary-bg">
+      <ion-icon name="time" class="text-white"></ion-icon>
+      <span ion-text class="text-white"></span>
+      <span class="pull-right" ion-text color="light"> <span ion-text  class="text-green bold">{{thumb.description}}</span></span>
+    </div>
+  </div>
 
 </ion-content>
