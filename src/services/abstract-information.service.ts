@@ -1,5 +1,4 @@
 import {Injectable} from "@angular/core";
-import {WORK_EXPERIENCES} from "./mock-trips";
 
 @Injectable()
 export class AbstractInformationService {

@@ -18,6 +18,7 @@ export abstract class AbstractItem {
 
   // view workExperience detail
   viewDetail(id) {
+
     this.nav.push(TripDetailPage, {id: id});
   }
 }
